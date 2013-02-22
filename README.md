@@ -1,10 +1,7 @@
-# hue.js
+# hue-module
 
 This is a node.js client library for the [Philips Hue](http://www.meethue.com).
 
-## Installation
-
-    npm install hue-module
 
 ## Usage
 
@@ -24,6 +21,7 @@ issue the `arp -a` command from your terminal.
 				hue.change(lights[i].set({"on": true, "rgb":[0,255,255]}));
 	});
 
+At the moment there is no way to discover a base station or register with it. This is coming soon.
 
 ## API
 
@@ -50,7 +48,7 @@ Usage example:
 		light.set({"on":false});
 	});
 
-### Change settings
+### Render changes to bulb
 
 	hue.change(light)
 	
