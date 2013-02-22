@@ -1,6 +1,6 @@
 {
   "name": "hue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A client library for interacting with the Philips Hue lighting products",
   "main": "lib/hue.js",
   "dependencies": {
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/theycallmeswift/hue.js.git"
+    "url": "https://github.com/whyohwhyamihere/hue.js.git"
   },
   "keywords": [
     "Hue",
     "Philips",
     "Lighting"
   ],
-  "author": "Swift <theycallmeswift@gmail.com>",
+  "author": "Anderson",
   "license": "Beerware"
 }
