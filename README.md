@@ -4,7 +4,7 @@ This is a node.js client library for the [Philips Hue](http://www.meethue.com).
 
 ## Installation
 
-    npm install hue
+    npm install hue-module
 
 ## Usage
 
@@ -14,19 +14,48 @@ hue base station.  You can find this through the
 MAC address of the device (written on the bottom of the base station) and then
 issue the `arp -a` command from your terminal.
 
-    var Hue = require('hue')
-      , app = new Hue("192.168.1.x", "My First Hue Application");
+    var hue = require('hue');
+    
+    hue.load("IP Address", "Username/Key");
 
-    app.on('ready', function() {
-      app.lights.on();
-    });
+    hue.lights(function(lights){
+		for(i in lights)
+			if(lights.hasOwnProperty(i))
+				hue.change(lights[i].set({"on": true, "rgb":[0,255,255]}));
+	});
+
 
 ## API
 
 Below you will find an outline of the available methods, their purpose, and the
 corresponding usage example.
 
-### Get a list of lights (GET /api/myappkey/lights)
+### Get a list of lights
 
-    app.lights(callback) // array of lights
+    hue.lights(callback)
+    
+In the callback a list of lights are returned. Each light can be set however one chooses.
+  
+### Get a particular light
 
+	hue.light(lightID, callback)
+	
+### Set settings of a particular light
+
+	light.set(attributes)
+	
+Usage example:
+
+	hue.light(1, function(light){
+		light.set({"on":false});
+	});
+
+### Change settings
+
+	hue.change(light)
+	
+Usage example:
+
+	hue.light(1, function(light){
+		hue.change(light.set({"on":false}));
+	});
