@@ -3,6 +3,10 @@
 This is a node.js client library for the [Philips Hue](http://www.meethue.com).
 
 
+## Installation
+
+	npm install hue-module
+
 ## Usage
 
 In order to use the hue.js library, you will need to know the IP address of the
