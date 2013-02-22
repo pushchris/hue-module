@@ -1,4 +1,4 @@
-# hue-module
+# Node Hue Module
 
 This is a node.js client library for the [Philips Hue](http://www.meethue.com).
 
