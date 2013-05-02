@@ -61,3 +61,12 @@ Usage example:
 	hue.light(1, function(light){
 		hue.change(light.set({"on":false}));
 	});
+### Get a list of light groups
+
+	hue.groups(callback)
+
+An array of groups is returned in the callback.
+
+### Get a particular group
+
+	hue.group(groupID, callback)
