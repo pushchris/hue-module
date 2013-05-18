@@ -32,6 +32,14 @@ At the moment there is no way to discover a base station or register with it. Th
 Below you will find an outline of the available methods, their purpose, and the
 corresponding usage example.
 
+### Find your basestation
+
+If you do not already know the IP address of the base station you can search for it.
+
+    hue.discover(callback)
+    
+An IP address is returned in the callback that can then be used to load the module.
+
 ### Get a list of lights
 
     hue.lights(callback)
