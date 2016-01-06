@@ -1,6 +1,6 @@
 {
   "name": "hue-module",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A client library for interacting with the Philips Hue lighting products",
   "main": "lib/hue.js",
   "dependencies": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/whyohwhyamihere/hue-module.git"
+    "url": "https://github.com/pushchris/hue-module.git"
   },
   "keywords": [
     "Hue",
