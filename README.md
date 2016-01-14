@@ -15,7 +15,7 @@ hue base station.  You can find this through the
 MAC address of the device (written on the bottom of the base station) and then
 issue the `arp -a` command from your terminal.
 
-    var hue = require('hue');
+    var hue = require('hue-module');
     
     hue.load("IP Address", "Username/Key");
 
