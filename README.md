@@ -17,12 +17,18 @@ issue the `arp -a` command from your terminal.
 
     var hue = require('hue-module');
     
-    hue.load("IP Address", "Username/Key");
+    hue.load({
+        "host"  : "IP Address", 
+        "key"   : "Username/Key",
+        "port"  : 80
+    });
 
-    hue.lights(function(lights){
-		for(i in lights)
-			if(lights.hasOwnProperty(i))
+    hue.lights(function(lights) {
+		for (i in lights) {
+			if (lights.hasOwnProperty(i)) {
 				hue.change(lights[i].set({"on": true, "rgb":[0,255,255]}));
+            }
+        }
 	});
 
 At the moment there is no way to discover a base station or register with it. This is coming soon.
@@ -56,8 +62,8 @@ In the callback a list of lights are returned. Each light can be set however one
 	
 Usage example:
 
-	hue.light(1, function(light){
-		light.set({"on":false});
+	hue.light(1, function(light) {
+		light.set({ "on": false });
 	});
 
 ### Render changes to bulb
@@ -66,8 +72,8 @@ Usage example:
 	
 Usage example:
 
-	hue.light(1, function(light){
-		hue.change(light.set({"on":false}));
+	hue.light(1, function(light) {
+		hue.change(light.set({ "on": false }));
 	});
 ### Get a list of light groups
 
