@@ -42,7 +42,13 @@ corresponding usage example.
 
 If you do not already know the IP address of the base station you can search for it.
 
-    hue.discover(callback)
+    hue.nupnpDiscover(callback)
+    
+### Register a username
+
+To be able to send requests you need to register for a username. Do so by calling the following command after loading.
+
+    hue.getUsername(callback)
     
 An IP address is returned in the callback that can then be used to load the module.
 

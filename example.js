@@ -1,19 +1,28 @@
 var hue = require('./lib/hue');
 
-hue.discover(function (error, host) {
-    if (error) {
-        console.error(error);
-        return;
-    }
+var loadBridge = function(host) {
 
-    console.log("Discovered HUE at %s", host);
+    hue.load({
+        "host"  : host
+    }); 
     
-    // Need to register for key first (not currently supported)
+    hue.getUsername(function(err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        
+        turnOnLights(host, result.username);
+    });
+}
+
+var turnOnLights = function(host, username) {
+    
     hue.load({
         "host"  : host,
-        "key"   : "APPLICATION_KEY"
+        "key"   : username
     }); 
-
+    
     hue.lights(function(lights) {
         
         for (i in lights) {
@@ -29,4 +38,19 @@ hue.discover(function (error, host) {
             }
         }
     });
+}
+
+hue.nupnpDiscover(function(error, hosts) {
+    
+    if (error) {
+        console.error(error);
+        return;
+    }
+    
+    for (var i in hosts) {
+        if (hosts.hasOwnProperty(i)) {
+            
+            loadBridge(hosts[i]["internalipaddress"]);
+        }
+    }
 });
