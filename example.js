@@ -50,7 +50,7 @@ hue.nupnpDiscover(function(error, hosts) {
     for (var i in hosts) {
         if (hosts.hasOwnProperty(i)) {
 
-            loadBridge(hosts[i]["internalipaddress"]);
+            loadBridge(hosts[i].internalipaddress);
         }
     }
 });
