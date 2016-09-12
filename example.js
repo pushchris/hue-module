@@ -25,7 +25,7 @@ var turnOnLights = function(host, username) {
 
     hue.lights(function(lights) {
 
-        for (i in lights) {
+        for (var i in lights) {
             if (lights.hasOwnProperty(i)) {
                 hue.change(lights[i].set({
                     "on"    : true,
