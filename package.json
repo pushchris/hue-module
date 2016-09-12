@@ -1,6 +1,6 @@
 {
   "name": "hue-module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A client library for interacting with the Philips Hue lighting products",
   "main": "lib/hue.js",
   "dependencies": {
