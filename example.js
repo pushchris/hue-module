@@ -1,7 +1,6 @@
 var hue = require('./lib/hue');
 
 var loadBridge = function(host) {
-
     hue.load({
         "host"  : host
     });
@@ -17,14 +16,12 @@ var loadBridge = function(host) {
 };
 
 var turnOnLights = function(host, username) {
-
     hue.load({
         "host"  : host,
         "key"   : username
     });
 
     hue.lights(function(lights) {
-
         for (var i in lights) {
             if (lights.hasOwnProperty(i)) {
                 hue.change(lights[i].set({
@@ -49,7 +46,6 @@ hue.nupnpDiscover(function(error, hosts) {
 
     for (var i in hosts) {
         if (hosts.hasOwnProperty(i)) {
-
             loadBridge(hosts[i].internalipaddress);
         }
     }
